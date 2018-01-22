@@ -1,18 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
-import { AppComponent } from './app.component';
+import { HotelChoiceModule } from "./HotelChoice/hotel-choice.module"
+import { PopupModule } from "./Popups/popup.module";
+import { AdminModule } from "./AdminPanel/admin.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeComponent } from "./Home/home.component";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from  "./Login/login.component";
+import {UserDataService,AuthGuard,CookieService} from "./services/service.barrel";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    PopupModule,
+    HotelChoiceModule,
+    AdminModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    UserDataService,
+    AuthGuard,
+    CookieService
+  ]
 })
 export class AppModule { }
+
+
+
+
+
+
+

@@ -8,7 +8,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-  <app-root></app-root>
+
+<!--Отображение приложения -->
+<body id="global-body">
+
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 header-logo-wrapper">
+            <a  routerLink="/" routerLinkActive="active" href="/">
+              <img src="assets/img/Logo.gif" alt=""></a>
+          </div>
+          <div class="col-md-5"></div>
+          <div class="col-md-4 header-search-contacts">
+            <div class="search">
+              <input type="text" id="search-field" name="gg">
+              <img src="assets/img/search-btn2.gif" id="s-btn" alt="">
+            </div>
+            <p>Круглосуточный контакт-центр <span>0 800 500 600</span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--App body-->
+    <app-root></app-root>
+    <!--App body-->
+
+
+
+    <footer class="footer">
+        <div class="copyright">
+          <div class="register">
+            <p>Лицензия на Туроператорскую деятельность ООО «ТТВК»:<br>
+              серия АЕ № 272718 выдана 13 марта 2014 года.</p>
+          </div>
+          <div class="register">
+            <p class="copy">Travel.ua - ведущий европейский туроператор в Украине © 2017</p>
+          </div>
+        </div>
+    </footer>
+
 </body>
 </html>
