@@ -1,6 +1,7 @@
 import { Component, OnInit} from "@angular/core";
 import {CommentsService} from "../../services/service.barrel";
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import {Comment} from "../../models/models.barrel";
 
 @Component({
     moduleId: module.id,
@@ -10,8 +11,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 export class HotelCommentsListComponent implements OnInit {
 
-    comments: Comment[] = [];
-    phrase: any = [];
+    public comments: Array<Comment>;
+    public phrase: any = [];
     constructor(public _commentService: CommentsService, private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
@@ -22,7 +23,9 @@ export class HotelCommentsListComponent implements OnInit {
             let id = +params["id"];
             this._commentService.getComments(id).then( (data) => {
                     console.log(data);
-                    this.comments = data;
+                    if (data) {
+                        this.comments = data;
+                    }
                 });
         });
 

@@ -1,4 +1,4 @@
-import {Injectable, Optional} from '@angular/core';
+/*import {Injectable, Optional} from '@angular/core';
 
 import {CookieOptions} from './base-cookie-options';
 import {CookieService} from './cookies.service';
@@ -16,4 +16,4 @@ export class CookieBackendService extends CookieService {
   constructor(@Optional() _defaultOptions?: CookieOptions) {
     super(_defaultOptions);
   }
-}
+}*/

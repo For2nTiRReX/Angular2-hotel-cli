@@ -13,10 +13,14 @@ export class HotelsFilterComponent implements OnInit {
 
     hotels: Hotel[];
     filtersForm: FormGroup;
-    countryFilterValues:[string];
-    comfortFilterValues:[string];
+    countryFilterValues: Array<string>;
+    comfortFilterValues: Array<any>;
     selectedComfort: string = "Все";
     selectedCountry: string = "Все";
+    maxPrice: string = "";
+    minPrice: string = "";
+    keyWord: string = "";
+
     //counter:number = 1;
 
     @Output() hotelsUpdated: EventEmitter<any> = new EventEmitter();
@@ -53,6 +57,8 @@ export class HotelsFilterComponent implements OnInit {
         comfort = comfort.filter((v, i, a) => a.indexOf(v) === i);
         countrys.unshift('Все');
         comfort.unshift('Все');
+
+
         this.countryFilterValues = countrys;
         this.comfortFilterValues = comfort;
         this.filtersForm.controls['maxPrice'].setValue(maxPrice);
@@ -97,6 +103,7 @@ export class HotelsFilterComponent implements OnInit {
         return value.comfort == this.selectedComfort;
     }
     private filterByPrice(value) {
+        console.log(this);
         return this.maxPrice >= value.price && value.price >= this.minPrice;
     }
     private filterByKeyWord(value) {
