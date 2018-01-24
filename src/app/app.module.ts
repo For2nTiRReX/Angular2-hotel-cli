@@ -9,8 +9,9 @@ import { AdminModule } from "./AdminPanel/admin.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./Home/home.component";
 import { AppComponent } from "./app.component";
-import { LoginComponent } from  "./Login/login.component";
-import {UserDataService,AuthGuard,CookieService} from "./services/service.barrel";
+import { LoginComponent } from "./Login/login.component";
+import {UserDataService, AuthGuard, CookieService} from "./services/service.barrel";
+import { Page404Component } from './page404/page404.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {UserDataService,AuthGuard,CookieService} from "./services/service.barrel
     AppComponent,
     HomeComponent,
     LoginComponent,
+    Page404Component,
   ],
   imports: [
     BrowserModule,

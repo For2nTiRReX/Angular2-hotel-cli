@@ -1,8 +1,12 @@
 $menu-bg: #e4f3fb;
-$links-color: #11345e;
+$links-color: #326bb1;
 $labels-color: #c0e3f4;
 $accent-orange: #ffa900;
 $desc-info: #888888;
+$accent-bg-blue: #262F36;
+$accent-orange: #ffa900;
+
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -16,7 +20,7 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-  background: #CCEAE7;
+  background: #ecfff7;
   color: #333333;
   font-family: Arial,Helvetica,sans-serif;
 }
@@ -42,62 +46,44 @@ h1, .h1, h2, .h2, h3, .h3 {
 .header{
   display: block;
   position: relative;
-  height: 100px;
 }
-.header a:first-child{
-  margin: 10px 0 0 0;
-}
-.header a{
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+.main-menu {
+  background: $accent-bg-blue;
+  min-height:auto;
+  ul {
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+  .nav {
+    list-style: none;
+    flex-wrap: wrap;
+    a {
+      color: #fff;
+      font-size: 16px;
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover,
+      &.active {
+        background-color: $accent-orange;
+        color: #fff;
+      }
+    }
+  }
 }
 
-.head-left{
-  display: block;
-  position: absolute;
-  top:10px;
-  right: 0;
-}
-.head-left a{
-  display: inline;
-  position: relative;
-  margin: 0 5px;
-}
-.head-left p{
-  font-weight: bold;
-  background: #ffa900;
-  padding: 4px 10px;
-  margin: 5px 0;
-
-}
-.head-center{
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 260px;
-}
 .search{
-  margin: 35px 0 5px 0;
-  background: url(../img/search-bg.png) no-repeat;
-  padding-top: 7px;
-}
-.search img{
-  display: block;
-  margin: -3px 0 0 0;
+  position: relative;
+  img{
+    display: block;
+    margin: -3px 0 0 0;
+    position: absolute;
+  }
 }
 #search-field{
-  float: left;
-  display: block;
-  border: solid 1px #FFFFFF;
-  width: 260px;
-  height: 20px;
-  margin: -2px 0 2px 5px;
-  padding: 0 4px;
-  color: #7A868E;
-  background: #FFFFFF;
-  font-style: italic;
 }
 .head-center a {
   font-weight: bold;
@@ -105,47 +91,17 @@ h1, .h1, h2, .h2, h3, .h3 {
   background: #ffa900;
   padding: 3px;
 }
-.head-center a:hover {
-  text-decoration: none;
-}
-.head-center p{
+
+.header-contacts {
   color: #1a5079;
   font-size: 16px;
-
 }
-.head-center p span{
+.header-contacts span{
   font-weight: bold;
 
 }
 
-.menu-main{
-  display: block;
-  width: 100%;
-  height: 43px;
-  overflow: hidden;
-}
 
-.menu-main table {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  border-collapse: collapse;
-  background: url(../img/main-menu-bg.png) repeat-x left top;
-
-}
-
-.menu-main a{
-  color: #1a5079;
-  font-weight: bold;
-  font-size: 1.2em;
-  border-left: 1px solid #fff;
-  padding: 14px 14px;
-  text-decoration: none;
-  border: none;
-
-}
 #last{
   color: #fff;
   background:  #1a5079;
@@ -177,7 +133,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 .after-head{
   overflow: hidden;
   width: 100%;
-  background: #1d5b89;
+  background: $links-color;
   color: #c0e3f4;
 
 }
@@ -211,7 +167,27 @@ h1, .h1, h2, .h2, h3, .h3 {
 .hotel-holder{
   min-height: 700px;
   background: #fff;
-  padding: 10px 0;
+  padding: 0px 0;
+  .hotel-item {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .footer-meta-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .description {
+    margin-bottom: 30px;
+  }
+  .comfort-holer {
+    display: inline-block;
+  }
 }
 .hotel-holder h2{
   margin: 0 15px;
@@ -240,7 +216,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 .single-a{
   font-size: 1.5em!important;
-  color: #1a5079!important;
+  color: $links-color;
   margin: 5px 0!important;
   width: 77%;
   text-decoration: none;
@@ -328,32 +304,7 @@ input[type=submit]{
   color: #003e58;
   font-weight: bold;
 }
-.main-menu {
-  background: $menu-bg;
-  min-height:auto;
-  ul {
-    text-align: center;
-  }
-  li {
-    display: inline-block;
-  }
-  .nav {
-    list-style: none;
-    a {
-      color: $links-color!important;
-      font-size: 16px;
-      display: block;
-      padding: 10px 8px;
-      text-decoration: none;
-      font-weight: bold;
-      &:hover,
-      &.active {
-        background-color: $links-color!important;
-        color: #fff!important;
-      }
-    }
-  }
-}
+
 
 .hotel-single-wrapper {
   background-color: #fff;

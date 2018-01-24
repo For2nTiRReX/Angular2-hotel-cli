@@ -1,21 +1,42 @@
 <div class="hotel-holder">
-        <div class='single-hot' id="hotel-{{item.id}}" *ngFor="let item of hotels">
-                <a routerLink="/hotels/{{item.id}}" >
-                    <img src='{{item.thumbnail}}'>
-                </a>
-                <a href='' id='countryA'>{{item.country}}</a>
-                <a href='#' id='countryB'>{{item.whereabout}}</a>          <br>
-                <a href="" class="single-a"> {{item.title}}</a>
-            <span class="sp-m">Клас отеля</span>
-            <div class="comfort-holer" >
-                <img src="/assets/img/star-small.png" alt=" " *ngFor="let comfort of counterRaiting(item.comfort)">
+    <div class='hotel-item' id="hotel-{{item.id}}" *ngFor="let item of hotels">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a routerLink="/hotels/{{item.id}}" >
+                        <img src='{{item.thumbnail}}'>
+                    </a>
+                </div>
             </div>
-            <br>
-            <p class="display">{{item.content}}</p>
-            <div class="cena-d">
-                от<span>{{item.price}}</span> грн.
-                <p>За номер</p>
-                <p class="get-comf">{{item.comfort}}</p>
+            <div class="col-md-8">
+                <div class="content">
+                    <div class="meta-data">
+                        <div class="title">
+                            <a routerLink="/hotels/{{item.id}}" class="single-a"> {{item.title}}</a>
+                        </div>
+                        <div class="location-breadcrumbs">
+                            <a routerLink="/hotels/" id='countryA'>{{item.country}}</a> >
+                            <a routerLink="/hotels/" id='countryB'>{{item.whereabout}}</a>
+                        </div>
+                    </div>
+                    <div class="description">
+                        {{item.content}}
+                    </div>
+                    <div class="footer-meta-data">
+                        <div class="class-hotel">
+                            <span class="sp-m">Клас отеля</span>
+                            <div class="comfort-holer" >
+                                <img src="/assets/img/star-small.png" alt=" " *ngFor="let comfort of counterRaiting(item.comfort)">
+                            </div>
+                        </div>
+                        <div class="hotel-price">
+                            от <span>{{item.price}}</span> грн.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+    </div>
 </div>
