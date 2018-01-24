@@ -1,0 +1,2 @@
+Time : 09:48:06
+SQLSTATE[HY000] [1049] Unknown database 'tyrist'

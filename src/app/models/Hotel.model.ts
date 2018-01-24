@@ -9,7 +9,7 @@ export class Hotel {
     public thumbnail: string;
     public comfort: string;
 
-    constructor(id, title, content,price,available,whereabouts,country,thumbnail,comfort) {
+    constructor(id, title, content, price, available, whereabouts, country, thumbnail, comfort) {
         this.id = id;
         this.title = title;
         this.content = content;

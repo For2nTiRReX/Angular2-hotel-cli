@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 define('HOST_NAME', 'localhost');
 define('HOST_LOGIN', 'root');
 define('HOST_PASSWORD', '');

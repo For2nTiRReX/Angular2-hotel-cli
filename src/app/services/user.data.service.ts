@@ -13,7 +13,7 @@ export class UserDataService {
     // URL для перенаправления после авторизации
 
     private userTokens:Promise<Object>;
-    private url = "http://tour-dev/api/UserController.php";
+    private url = "http://tour.dev/api/UserController.php";
 
     constructor(private http: Http, private  _cookieService :CookieService) {
         this.userTokens = this.getUsersTokensData();

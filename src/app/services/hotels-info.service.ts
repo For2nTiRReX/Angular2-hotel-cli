@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 @Injectable()
 export class HotelService {
-    private url = "http://tour-dev/api/HotelsController.php";
+    private url = "http://tour.dev/api/HotelsController.php";
     public hotelsCurrentObserver: Observable<any>;
     public serviceSubscriber = new BehaviorSubject<any>([]);
     public initHotelsPromise: Promise<any>;

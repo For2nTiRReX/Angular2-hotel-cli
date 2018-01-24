@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { HotelChoiceModule } from "./HotelChoice/hotel-choice.module"
+import { HotelChoiceModule } from "./HotelChoice/hotel-choice.module";
 import { PopupModule } from "./Popups/popup.module";
 import { AdminModule } from "./AdminPanel/admin.module";
 import { AppRoutingModule } from "./app-routing.module";
@@ -22,7 +22,7 @@ import {UserDataService,AuthGuard,CookieService} from "./services/service.barrel
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PopupModule,
+    // PopupModule,
     HotelChoiceModule,
     AdminModule,
     FormsModule,

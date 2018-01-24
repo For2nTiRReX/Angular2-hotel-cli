@@ -10,8 +10,9 @@ import {HotelService} from "../../services/hotels-info.service";
 
 export class ListHotelsComponent implements OnInit {
 
-    hotels: Hotel[];
+    //hotels: Hotel[];
 
+    hotels: any[];
     counterRaiting = Array;
 
     constructor(public _hotelService: HotelService) {}

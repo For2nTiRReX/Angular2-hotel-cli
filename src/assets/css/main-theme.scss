@@ -3,7 +3,9 @@ $links-color: #11345e;
 $labels-color: #c0e3f4;
 $accent-orange: #ffa900;
 $desc-info: #888888;
-
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 *{
   margin: 0; padding: 0;
 }
@@ -164,9 +166,13 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 .footer{
-  background: #dfdfdf;
+  background: #262F36;
   overflow: hidden;
   width: 100%;
+  padding:  15px 0;
+  .copy {
+    margin: 0;
+  }
 }
 .after-head{
   overflow: hidden;
@@ -325,7 +331,13 @@ input[type=submit]{
 .main-menu {
   background: $menu-bg;
   min-height:auto;
-  .navbar-nav {
+  ul {
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+  .nav {
     list-style: none;
     a {
       color: $links-color!important;

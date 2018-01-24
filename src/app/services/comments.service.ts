@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 @Injectable()
 export class CommentsService {
 
-    private url = "http://tour-dev/api/CommentsController.php";
+    private url = "http://tour.dev/api/CommentsController.php";
 
     public commentsObserver: Observable<any>;
     public commentsServiceSubscriber = new BehaviorSubject<any>([]);
