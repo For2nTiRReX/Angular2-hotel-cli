@@ -93,14 +93,12 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 .header-contacts {
-  color: #1a5079;
   font-size: 16px;
+  span{
+    font-weight: bold;
+    color: $accent-orange;
+  }
 }
-.header-contacts span{
-  font-weight: bold;
-
-}
-
 
 #last{
   color: #fff;

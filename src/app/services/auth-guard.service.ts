@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { CanActivate ,Router } from "@angular/router";
-import { CookieService,UserDataService } from "./service.barrel";
+import { Injectable } from '@angular/core';
+import { CanActivate , Router } from '@angular/router';
+import { CookieService, UserDataService } from './service.barrel';
 
 /*
     Guard - механизм для выполнения проверок перед активацией и деактивацией маршрута
@@ -18,7 +18,7 @@ import { CookieService,UserDataService } from "./service.barrel";
 export class AuthGuard implements CanActivate {
 
 
-    constructor(private  _cookieService :CookieService, private _userDataService: UserDataService, private router: Router) {}
+    constructor(private  _cookieService: CookieService, private _userDataService: UserDataService, private router: Router) {}
 
     private compareToken(token) {
         let user_cookie_token = JSON.parse(this._cookieService.get('auth_user')).user_token;
@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
     canActivate(): Promise<boolean> {
 
         if (!this._cookieService.get('auth_user')) {
-            console.log("User cookie doesn't exist!");
+            console.log('User cookie doesn\'t exist!');
             this.router.navigate(['/login']);
         }
 
@@ -38,18 +38,16 @@ export class AuthGuard implements CanActivate {
                 .then((data) => {
                     console.log(data.response.users_tokens);
                     console.log(JSON.parse(this._cookieService.get('auth_user')).user_token);
-                    if(data.response.users_tokens.length > 0) {
+                    if (data.response.users_tokens.length > 0) {
                         if ( this.compareToken(data.response.users_tokens )) {
                             console.log("User exist!");
                             return true;
-                        }
-                        else {
+                        } else {
                             console.error("User cookie token doesn't not mach any db token!");
                             this.router.navigate(['/login']);
                             return false;
                         }
-                    }
-                    else {
+                    } else {
                         console.error("Api returned 0 tokens!");
                         this.router.navigate(['/login']);
                        return false;
