@@ -20,12 +20,25 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-  background: #ecfff7;
+  background: rgba(59, 79, 177, 0.04);
   color: #333333;
   font-family: Arial,Helvetica,sans-serif;
 }
 
-
+.form-control:focus {
+  border-color: $accent-orange;
+}
+.form-group {
+  position: relative;
+}
+.field-description {
+  position: absolute;
+  color: #ffa900;
+  font-size: 12px;
+  margin: 0;
+  right: 0;
+  bottom: -18px;
+}
 
 h1, .h1, h2, .h2, h3, .h3 {
   margin: 0;
@@ -93,10 +106,36 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 .header-contacts {
-  font-size: 16px;
-  span{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: 600;
+  span {
+    display: block;
+    width: 100%;
     font-weight: bold;
     color: $accent-orange;
+  }
+}
+.header-search {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  input {
+    border: 1px solid #262F36;
+    background-color: rgba(255, 191, 0, 0.14);
+    padding: 0 30px 0 10px;
+    width: 200px;
+  }
+  i {
+    padding: 5px 8px;
+    margin: 0px 0 0px -35px;
+    position: relative;
+    top: 1px;
+    color: #fff;
+    background: $accent-bg-blue;
   }
 }
 
@@ -111,12 +150,32 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 
-.after-head {
-  overflow: hidden;
+.hotels-filter-wrapper {
   display: block;
   position: relative;
   width: 100%;
-  background: #fff;
+  overflow: hidden;
+  width: 100%;
+  background: $links-color;
+  color: #c0e3f4;
+  hr {
+    margin: 25px 0 15px;
+    border-top: 1px solid #fff;
+  }
+  h2{
+    color: #fff;
+    font-size: 1.8em;
+  }
+  .filter-search {
+    >div {
+      display: flex;
+      align-items: center;
+    }
+    .form-group {
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
 }
 
 .footer{
@@ -127,18 +186,6 @@ h1, .h1, h2, .h2, h3, .h3 {
   .copy {
     margin: 0;
   }
-}
-.after-head{
-  overflow: hidden;
-  width: 100%;
-  background: $links-color;
-  color: #c0e3f4;
-
-}
-.after-head h1{
-  color: #fff;
-  padding: 15px;
-  font-size: 1.8em;
 }
 .find-holder{
   overflow: hidden;
@@ -170,21 +217,40 @@ h1, .h1, h2, .h2, h3, .h3 {
     margin-bottom: 10px;
     position: relative;
   }
+  .content {
+    padding-right: 25px;
+    .description {
+      text-align: justify;
+    }
+  }
+  
   .footer-meta-data {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 0 15px;
+    padding: 0 40px 0 15px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .comfort-holer {
+      font-size: 14px;
+      color: $accent-orange;
+    }
   }
   .description {
     margin-bottom: 30px;
   }
-  .comfort-holer {
-    display: inline-block;
+  .class-hotel {
+    .comfort-holer {
+      display: inline-block;
+      position: relative;
+      top: -2px;
+      .fa {
+        font-size: 11px;
+        color: #ff7c1d;
+      }
+    }
   }
 }
 .hotel-holder h2{
@@ -293,7 +359,6 @@ input[type=submit]{
   text-align: center;
 }
 .meta-title {
-  color: $accent-orange;
   font-weight: bold;
   font-size: 18px;
 }
