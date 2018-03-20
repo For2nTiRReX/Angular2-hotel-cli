@@ -4,12 +4,12 @@
                 <form [formGroup]="filtersForm" novalidate>
                     <div class="row filter-search">
                         <div class="col-md-8">
-                            <h2>Поиск тура</h2>
+                            <h2>Tour search:</h2>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <input class="form-control" type="text" name="search" id="search" formControlName="keyWord" >
-                                <label for="search" class="field-description">*введите название отеля либо ключевое слово</label>
+                                <label for="search" class="field-description">*enter hotel name or key phrase</label>
                             </div>
                         </div>
                     </div>
@@ -17,13 +17,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="countryS">Страна/курорт:</label>
+                                <label for="countryS">Country / Resort:</label>
                                 <select class="form-control" name="countryS" id="countryS" formControlName="selectedCountry" [(ngModel)]="selectedCountry" >
                                     <option *ngFor="let c of countryFilterValues" [value]="c">{{c}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="komfS">Клас отеля:</label>
+                                <label for="komfS">Hotel class:</label>
                                 <select class="form-control" name="komfS" id="komfS" formControlName="selectedComfort" >
                                     <option *ngFor="let c of comfortFilterValues" [ngValue]="c">{{c}}</option>
                                 </select>
@@ -31,11 +31,11 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="priceMin">Цена от (грн.)</label>
+                                <label for="priceMin">Price from (UAH):</label>
                                 <input class="form-control" id="priceMin" type="text"  name="minPrice" formControlName="minPrice">
                             </div>
                             <div class="form-group">
-                                <label for="priceMax">Цена до (грн.)</label>
+                                <label for="priceMax">Price up to (UAH):</label>
                                 <input class="form-control" id="priceMax" type="text"  name="maxPrice" formControlName="maxPrice">
                             </div>
                         </div>

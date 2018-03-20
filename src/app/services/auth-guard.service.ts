@@ -35,7 +35,8 @@ export class AuthGuard implements CanActivate {
         }
 
         return  this._userDataService.getUsersTokensData()
-                .then((data) => {
+                .subscribe((data) => {
+                    console.log(data);
                     console.log(data.response.users_tokens);
                     console.log(JSON.parse(this._cookieService.get('auth_user')).user_token);
                     if (data.response.users_tokens.length > 0) {

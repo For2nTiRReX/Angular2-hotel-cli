@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 define('HOST_NAME', 'localhost');
 define('HOST_LOGIN', 'root');
-define('HOST_PASSWORD', '');
+define('HOST_PASSWORD', 'root');
 define('BASE_NAME', 'tyrist');
 
 require(dirname(__FILE__)."/DB.class.php");

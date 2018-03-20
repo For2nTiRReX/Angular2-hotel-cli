@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { CookieService } from "./service.barrel";
 import {Http, Response, URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
-
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserDataService {
@@ -54,27 +54,16 @@ export class UserDataService {
     public getUsersTokensData() {
         let data = new URLSearchParams();
         data.append('get_data', JSON.stringify({'get_tokens' : 'get_tokens'}));
-        let UsersTokens = this.http.post(this.url,data)
-            .toPromise()
-            .then((succes) => {
-                console.log(succes);
-                if(succes.json().status != "error") {
-                    return succes.json();
-                }
-                else {
-                    console.log(succes.json().response);
-                }
-            })
-            .catch(this.handleError);
-        return UsersTokens;
+        return this.http.post(this.url,data)
+            .map((response: Response) => response.json());
     }
 
 
     private handleError(error: any): any {
-        let message = "";
+        let message = '';
 
         if (error instanceof Response) {
-            let errorData = error.json().error || JSON.stringify(error.json());
+            const errorData = error.json().error || JSON.stringify(error.json());
             message = `${error.status} - ${error.statusText || ''} ${errorData}`
         } else {
             message = error.message ? error.message : error.toString();

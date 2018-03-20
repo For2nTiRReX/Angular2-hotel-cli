@@ -7,6 +7,7 @@ $accent-bg-blue: #262F36;
 $accent-orange: #ffa900;
 $stars-color: #ff7c1d;
 
+/*======= Globals =======*/
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -48,13 +49,10 @@ h1, .h1, h2, .h2, h3, .h3 {
   background:  url("../img/bg-bottom2.jpg") bottom no-repeat
 }
 
-.karkas {
-  display: block;
-  position: relative;
-  width: 990px;
-  min-height: 1024px;
-  margin: 0 auto;
-  z-index: 10;
+
+
+#primary-container {
+  padding: 30px 0;
 }
 .header{
   display: block;
@@ -149,7 +147,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   background:  #1a5079;
 }
 
-
+/*======= Globals =======*/
 .hotels-filter-wrapper {
   display: block;
   position: relative;
@@ -211,11 +209,13 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 .hotel-holder{
   min-height: 700px;
-  background: #fff;
+  *background: #fff;
   padding: 0px 0;
   .hotel-item {
     margin-bottom: 10px;
     position: relative;
+    border: 1px solid #fff6e4;
+    background: #fff
   }
   .content {
     padding-right: 25px;
