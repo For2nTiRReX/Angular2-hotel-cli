@@ -1,12 +1,12 @@
-import { Component, OnInit} from "@angular/core";
-import {CommentsService} from "../../services/service.barrel";
+import { Component, OnInit} from '@angular/core';
+import { CommentsService } from 'app/services/service.barrel';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import {Comment} from "../../models/models.barrel";
+import { Comment } from 'app/models/models.barrel';
 
 @Component({
     moduleId: module.id,
-    selector: "hotel-comments-list",
-    templateUrl: "hotel-comments-list.component.html",
+    selector: 'hotel-comments-list',
+    templateUrl: 'hotel-comments-list.component.html',
 })
 
 export class HotelCommentsListComponent implements OnInit {
@@ -20,7 +20,7 @@ export class HotelCommentsListComponent implements OnInit {
 
         this.activatedRoute.params.forEach((params: Params) => {
 
-            let id = +params["id"];
+            let id = +params['id'];
             this._commentService.getComments(id).then( (data) => {
                     console.log(data);
                     if (data) {

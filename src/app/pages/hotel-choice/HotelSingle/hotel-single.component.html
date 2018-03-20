@@ -1,0 +1,79 @@
+<div class="hotel-single-wrapper" *ngIf="hotel">
+    <h1 class="hotel-title">{{hotel.title}}</h1>
+
+    <div class="hotel-info-holder">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="hotel-img">
+                    <a href=""><img src="{{hotel.thumbnail}}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="hotel-info">
+                    <div class="hotel-meta">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="meta-title">Рейтинг отеля:</div>
+                                <div class="meta-value stars-holder">
+                                    <i class="fa fa-star" *ngFor="let comfort of counterRaiting(hotel.comfort)"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="meta-title">Цена от <span class="description">(за 10 дней)</span>:</div>
+                                <div class="meta-value price-holder">
+                                    <span class="price">{{hotel.price}}</span> грн.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="meta-title">Страна:</div>
+                                <div class="meta-value country-holder">
+                                    {{hotel.country}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotel-content">
+                        {{hotel.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-basket-holder">
+        <div class="basket-title">Бронирование туров на сайте – это удобно</div>
+        <em>Достаточно кликнуть на стоимость</em>
+        <div class="advantages-holder">
+            <div class="basket-single">
+
+                <div class="basket-single-r">
+                    <div class="basket-title-area"><span class="basket-number">1</span> Экономия времени</div>
+                    Вы сами выбираете отель, даты вылета и продолжительность отдыха
+                </div>
+            </div>
+            <div class="basket-single">
+
+                <div class="basket-single-r">
+                    <div class="basket-title-area"><span class="basket-number">2</span> Бронирование дополнительных услуг</div>
+                    Индивидуальный трансфер, страховка, экскурсии
+                </div>
+            </div>
+            <div class="basket-single">
+
+                <div class="basket-single-r">
+                    <div class="basket-title-area"><span class="basket-number">3</span>Подтверждение на e-mail</div>
+                    Уведомление на e-mail с полной информацией о забронированном туре
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hotel-comments-list></hotel-comments-list>
+
+    <hotel-comments-form></hotel-comments-form>
+
+
+
+
+
+</div>

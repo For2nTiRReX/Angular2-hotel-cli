@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import {CookieService} from "../../services/service.barrel"
+import {CookieService} from "app/services/service.barrel"
 import { Router } from "@angular/router";
 
 @Component({

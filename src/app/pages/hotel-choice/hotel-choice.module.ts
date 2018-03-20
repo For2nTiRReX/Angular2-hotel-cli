@@ -1,15 +1,15 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from "@angular/http";
+import { HttpModule } from '@angular/http';
 
 import { RouterModule } from '@angular/router';
 import {HotelChoiceRoutingModule} from './hotel-choice-routing.module';
 
-import {HotelService,CommentsService} from "../services/service.barrel";
+import { HotelService, CommentsService } from 'app/services/service.barrel';
 
-import { ListHotelsComponent,HotelsArchiveComponent,HotelsFilterComponent} from "./HotelsArchive/hotel-archive.barrel";
-import { HotelSingleComponent,HotelCommentsListComponent,HotelCommentsFormComponent } from "./HotelSingle/hotel-single.barrel";
+import { ListHotelsComponent, HotelsArchiveComponent, HotelsFilterComponent } from './HotelsArchive/hotel-archive.barrel';
+import { HotelSingleComponent, HotelCommentsListComponent, HotelCommentsFormComponent } from './HotelSingle/hotel-single.barrel';
 
 @NgModule({
     imports: [

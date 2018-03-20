@@ -1,5 +1,5 @@
 import { Component, OnInit  } from "@angular/core";
-import {Hotel} from "../../models/Hotel.model";
+import {Hotel} from "app/models/Hotel.model";
 
 @Component({
     moduleId: module.id,

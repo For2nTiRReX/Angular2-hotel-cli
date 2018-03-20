@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { HotelChoiceModule } from "./HotelChoice/hotel-choice.module";
-import { PopupModule } from "./Popups/popup.module";
-import { AdminModule } from "./AdminPanel/admin.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeComponent } from "./Home/home.component";
 import { AppComponent } from "./app.component";
-import { LoginComponent } from "./Login/login.component";
 import {UserDataService, AuthGuard, CookieService} from "./services/service.barrel";
-import { Page404Component } from './page404/page404.component';
+import { NavigationComponent } from './shared-components/navigation/navigation.component';
+//import { PopupModule } from "./shared-components/popups/popup.module";
+
+import { Page404Component } from './pages/page404/page404.component';
+import { LoginComponent } from "./pages/login/login.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { HotelChoiceModule } from "./pages/hotel-choice/hotel-choice.module";
+import { AdminModule } from "./pages/admin-panel/admin.module";
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { Page404Component } from './page404/page404.component';
     HomeComponent,
     LoginComponent,
     Page404Component,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

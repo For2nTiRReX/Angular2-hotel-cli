@@ -1,8 +1,9 @@
 import { Component, OnInit} from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import {CommentsService} from "../../services/service.barrel";
-import {Comment} from "../../models/models.barrel";
 import {ActivatedRoute} from "@angular/router"
+
+import {CommentsService} from "app/services/service.barrel";
+import {Comment} from "app/models/models.barrel";
 
 @Component({
     moduleId: module.id,

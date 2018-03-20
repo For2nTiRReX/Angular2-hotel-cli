@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
-import {Http, Response, URLSearchParams } from "@angular/http";
+import {Http, Response, URLSearchParams } from '@angular/http';
 import { Comment } from "../models/Comment.model";
 import 'rxjs/add/operator/toPromise';
 import { Observable } from "rxjs/Observable";
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 @Injectable()
 export class CommentsService {
 
-    private url = "http://tour.dev/api/CommentsController.php";
+    private url = "http://tour.local/api/CommentsController.php";
 
     public commentsObserver: Observable<any>;
     public commentsServiceSubscriber = new BehaviorSubject<any>([]);

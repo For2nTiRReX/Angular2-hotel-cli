@@ -1,0 +1,34 @@
+<div class="comments-form-wrapper">
+    <h3>Хотите оставить отзыв?</h3>
+    <div class="form-holder">
+        <form [formGroup]="commentForm"  novalidate>
+            <div class="form-group">
+                <label for="name">Ваше имя:</label>
+
+                <input id="name" type="text" class="form-control"
+                       formControlName="name" required />
+
+                <div *ngIf="formErrors.name" class="alert alert-danger">
+                    {{ formErrors.name }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Комментарий:</label>
+
+                <textarea id="comment" class="form-control"
+                          formControlName="comment" required></textarea>
+
+                <div *ngIf="formErrors.comment" class="alert alert-danger">
+                    {{ formErrors.comment }}
+                </div>
+            </div>
+
+            <div *ngIf="!commentForm.valid && submTry" class="alert alert-danger">
+                Invalid form try to fix input values!
+            </div>
+
+            <button class="btn btn-default" (click)="addComment()">Опубликовать</button>
+        </form>
+    </div>
+</div>

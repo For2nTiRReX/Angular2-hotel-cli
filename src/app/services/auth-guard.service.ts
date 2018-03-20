@@ -40,15 +40,15 @@ export class AuthGuard implements CanActivate {
                     console.log(JSON.parse(this._cookieService.get('auth_user')).user_token);
                     if (data.response.users_tokens.length > 0) {
                         if ( this.compareToken(data.response.users_tokens )) {
-                            console.log("User exist!");
+                            console.log('User exist!');
                             return true;
                         } else {
-                            console.error("User cookie token doesn't not mach any db token!");
+                            console.error('User cookie token doesn\'t not mach any db token!');
                             this.router.navigate(['/login']);
                             return false;
                         }
                     } else {
-                        console.error("Api returned 0 tokens!");
+                        console.error('Api returned 0 tokens!');
                         this.router.navigate(['/login']);
                        return false;
                     }

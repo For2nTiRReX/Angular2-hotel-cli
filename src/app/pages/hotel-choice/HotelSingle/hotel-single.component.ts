@@ -1,12 +1,12 @@
-import { Component, OnInit} from "@angular/core";
-import {Hotel} from "../../models/Hotel.model";
-import { ActivatedRoute, Params } from "@angular/router";
-import {HotelService} from "../../services/hotels-info.service";
+import { Component, OnInit} from '@angular/core';
+import {Hotel} from 'app/models/Hotel.model';
+import { ActivatedRoute, Params } from '@angular/router';
+import {HotelService} from 'app/services/hotels-info.service';
 
 @Component({
     moduleId: module.id,
-    selector: "hotel-single",
-    templateUrl: "hotel-single.component.html",
+    selector: 'hotel-single',
+    templateUrl: 'hotel-single.component.html',
 })
 
 export class HotelSingleComponent implements OnInit {
@@ -19,7 +19,7 @@ export class HotelSingleComponent implements OnInit {
 
     ngOnInit() {
         this.activatedRoute.params.forEach((params: Params) => {
-            let id = +params["id"]; // конвертируем значение параметра id в тип number
+            let id = +params['id']; // конвертируем значение параметра id в тип number
             this._hotelService.initHotelsPromise.then((data) => {
                 this.hotel = data.filter(this.filterByID, id)[0];
             });

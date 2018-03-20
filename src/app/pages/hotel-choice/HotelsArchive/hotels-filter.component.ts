@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output  } from "@angular/core";
-import {HotelService} from "../../services/hotels-info.service";
-import {Hotel} from "../../models/Hotel.model";
+import {HotelService} from "app/services/hotels-info.service";
+import {Hotel} from "app/models/Hotel.model";
 import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({

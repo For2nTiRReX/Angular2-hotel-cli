@@ -5,7 +5,7 @@ $accent-orange: #ffa900;
 $desc-info: #888888;
 $accent-bg-blue: #262F36;
 $accent-orange: #ffa900;
-
+$stars-color: #ff7c1d;
 
 *, ::after, ::before {
   box-sizing: border-box;
@@ -237,6 +237,13 @@ h1, .h1, h2, .h2, h3, .h3 {
       font-size: 14px;
       color: $accent-orange;
     }
+    .hotel-price {
+      background: #ffa900;
+      padding: 5px 20px;
+      span {
+        font-weight: bold;
+      }
+    }
   }
   .description {
     margin-bottom: 30px;
@@ -247,8 +254,8 @@ h1, .h1, h2, .h2, h3, .h3 {
       position: relative;
       top: -2px;
       .fa {
-        font-size: 11px;
-        color: #ff7c1d;
+        font-size: 14px;
+        color: $stars-color;
       }
     }
   }
@@ -366,6 +373,42 @@ input[type=submit]{
   font-size: 14px;
   color: #003e58;
   font-weight: bold;
+  &.stars-holder {
+    font-size: 14px;
+    color: $stars-color;
+  }
+  &.price-holder {
+    .price {
+      font-weight: bold;
+      font-size: 17px;
+    }
+  }
+}
+
+
+/*======= Hotel Single =======*/
+.testimonials-list-wrapper {
+  margin-top: 20px;
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .comment-item {
+    background-color: rgb(247, 248, 251);
+    margin-bottom: 20px;
+    padding: 20px;
+    .author {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .date {
+      color: $stars-color;
+      font-size: 12px;
+    }
+    .comment-text {
+      font-size: 14px;
+    }
+  }
 }
 
 
@@ -383,52 +426,65 @@ input[type=submit]{
     margin-bottom: 20px;
   }
   .info-basket-holder{
-    position: absolute;
     overflow: hidden;
-    width: 290px;
     background: #E0F1FA;
-    top: 20px;
-    right: -210px;
+    padding: 20px 0;
+    margin-top: 20px;
+    em{
+      display: block;
+      overflow: hidden;
+      padding: 2px 25px 10px;
+    }
+    .basket-title {
+      display: block;
+      font-size: 1.3em;
+      font-weight: bold;
+      overflow: hidden;
+      padding: 0px 25px 10px 25px;
+    }
+    .advantages-holder {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      .basket-single{
+        width: 33.33333%;
+        display: block;
+        overflow: hidden;
+        padding: 2px 25px 10px;
+        text-align: left;
+      }
+      .basket-number{
+        background: #6CAFE0;
+        border-radius: 50%;
+        color: #FFFFFF;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 30px;
+        overflow: hidden;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+      }
+      .basket-single-r{
+        float: left;
+      }
+      .basket-title-area {
+        font-weight: bold;
+        margin-bottom: 3px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 50px;
+        .basket-number {
+          margin-right: 10px;
+        }
+      }
+    }
   }
-  .info-basket-holder em{
-    display: block;
-    overflow: hidden;
-    padding: 2px 25px 10px;
-  }
-  .basket-title{
-    display: block;
-    font-size: 1.3em;
-    font-weight: bold;
-    overflow: hidden;
-    padding: 25px 25px 10px 25px;
-  }
-  .basket-single{
-    display: block;
-    overflow: hidden;
-    padding: 2px 25px 10px;
-    text-align: left;
-  }
-  .basket-single-l{
-    background: #6CAFE0;
-    border-radius: 100px;
-    color: #FFFFFF;
-    display: block;
-    float: left;
-    font-size: 1.2em;
-    font-weight: bold;
-    line-height: 26px;
-    overflow: hidden;
-    text-align: center;
-    width: 26px;
-  }
-  .basket-single-r{
-    width: 207px;
-    float: right;
-  }
-  .basket-single-r p{
-    font-weight: bold;
-    margin-bottom: 3px;
-  }
+
 
   .choice-tur{
     position: relative;
@@ -466,3 +522,16 @@ input[type=submit]{
     padding-left: 0 !important;
   }
 }
+
+.comments-form-wrapper {
+  text-align: center;
+  .form-holder {
+    max-width: 600px;
+    margin: 0 auto;
+    label {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+/*======= Hotel Single =======*/

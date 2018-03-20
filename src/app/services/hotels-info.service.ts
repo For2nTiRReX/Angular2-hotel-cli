@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import {Http, Response, URLSearchParams } from "@angular/http";
-import { Hotel } from "../models/Hotel.model";
+import { Injectable } from '@angular/core';
+import {Http, Response, URLSearchParams } from '@angular/http';
+import { Hotel } from 'app/models/Hotel.model';
 import 'rxjs/add/operator/toPromise';
-import { Observable } from "rxjs/Observable";
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class HotelService {
-    private url = "http://tour.dev/api/HotelsController.php";
+    private url = 'http://tour.local/api/HotelsController.php';
     public hotelsCurrentObserver: Observable<any>;
     public serviceSubscriber = new BehaviorSubject<any>([]);
     public initHotelsPromise: Promise<any>;
@@ -17,11 +17,7 @@ export class HotelService {
         this.initHotelsPromise = this.getHotels();
         this.serviceSubscriber.next(this.initHotelsPromise);
         this.hotelsCurrentObserver = this.serviceSubscriber.asObservable();
-        /*this.hotelsCurrentObserver = new Observable(observer => {
 
-            console.log(this.serviceSubscriber.asObservable());
-            this.serviceSubscriber.next(this.getHotels());
-        });*/
     }
 
     public getHotels(): Promise<Hotel[]> {
@@ -31,7 +27,7 @@ export class HotelService {
         let Hotels = this.http.post(this.url,data)
             .toPromise()
             .then((succes) => {
-                if(succes.json().status != "error") {
+                if(succes.json().status != 'error') {
                     return this.extractHotels(succes);
                 }
                 else {
@@ -54,7 +50,7 @@ export class HotelService {
     }
 
     // public getHotel(id: string): Promise<Hotel> {
-    //     let Hotel = this.http.get(this.url + "/" + id)
+    //     let Hotel = this.http.get(this.url + '/' + id)
     //         .toPromise()
     //         .then(this.extractHotel)
     //         .catch(this.handleError);
@@ -66,9 +62,8 @@ export class HotelService {
     //     let Hotel = new Hotel(res.id, res.title, res.content,res.price,res.available,res.whereabout,res.country,res.thumbnail,res.comfort);
     //     return Hotel;
     // }
-
     private handleError(error: any): any {
-        let message = "";
+        let message = '';
 
         if (error instanceof Response) {
             let errorData = error.json().error || JSON.stringify(error.json());
@@ -82,11 +77,4 @@ export class HotelService {
         return Observable.throw(message);
     }
 
-    /*public getCurrentStateHotels() {
-        console.log(this.hotelsCurrentObserver);
-        this.hotelsCurrentObserver = new Observable(observer => {
-            observer.next(this.hotelsCurrent[0]);
-        });
-        return this.hotelsCurrentObserver;
-    }*/
 }

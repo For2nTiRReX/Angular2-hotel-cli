@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import {HomeComponent} from "./Home/home.component";
-import {LoginComponent} from "./Login/login.component";
-import {Page404Component} from './page404/page404.component';
+import { Page404Component } from './pages/page404/page404.component';
+import { LoginComponent } from "./pages/login/login.component";
+import { HomeComponent } from "./pages/home/home.component";
 
 
 @NgModule({
